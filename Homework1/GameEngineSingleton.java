@@ -3,11 +3,19 @@ package Homework1;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class GameEngine implements Engine, KeyListener {
-    final private DynamicSprite hero;
-    
-    public GameEngine(DynamicSprite hero) {
+public class GameEngineSingleton implements Engine, KeyListener {
+    private static GameEngineSingleton instance;
+    private final DynamicSprite hero;
+
+    private GameEngineSingleton(DynamicSprite hero) { 
         this.hero = hero;
+    }
+
+    public static GameEngineSingleton getInstance(DynamicSprite hero) {
+        if (instance == null) {
+            instance = new GameEngineSingleton(hero);
+        }
+        return instance;
     }
 
     @Override
