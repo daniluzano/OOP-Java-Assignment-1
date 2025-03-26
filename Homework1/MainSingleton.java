@@ -29,7 +29,7 @@ public class MainSingleton extends JFrame {
 
         hero = new DynamicSprite(ImageIO.read(new File("Homework1/resources/img/heroTileSheetLowRes.png")), 200, 300, 50, 48);
 
-        physicsEngine = new PhysicsEngineSingleton();
+        physicsEngine = PhysicsEngineSingleton.getInstance();
         renderEngine = RenderEngineSingleton.getInstance();
         
         gameEngine = GameEngineSingleton.getInstance(hero);  

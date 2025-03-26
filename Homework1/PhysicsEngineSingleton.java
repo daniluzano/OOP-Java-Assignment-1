@@ -7,7 +7,7 @@ public class PhysicsEngineSingleton implements Engine {
     private ArrayList<DynamicSprite> movingSpriteList;
     private ArrayList<Sprite> environment;
 
-    PhysicsEngineSingleton() { 
+    private PhysicsEngineSingleton() { 
         this.movingSpriteList = new ArrayList<>();
         this.environment = new ArrayList<>();
     }

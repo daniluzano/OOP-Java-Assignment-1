@@ -8,7 +8,7 @@ public class RenderEngineSingleton extends JPanel implements Engine {
     static RenderEngineSingleton instance;
     private ArrayList<Displayable> renderList;
 
-    RenderEngineSingleton() {  
+    private RenderEngineSingleton() {  
         this.renderList = new ArrayList<>();
     }
 

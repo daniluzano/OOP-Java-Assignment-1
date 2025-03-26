@@ -80,12 +80,13 @@ public class DynamicSprite extends SolidSprite {
 
     @Override
     public void draw(Graphics g) {
-        int currTime = (int) System.currentTimeMillis();
-        Integer index = currTime / timeBetweenFrame % spriteSheetNumberOfColumn;
+        long currTime = (long) System.currentTimeMillis();
+        Integer index = (int)((currTime / timeBetweenFrame) % spriteSheetNumberOfColumn);
         Integer attitude = direction.getFrameLineNumber();
         //g.drawImage(getImage(), index*(int)getWidth(), attitude*(int)getHeight(), null);
         g.drawImage(getImage(), (int) getX(), (int) getY(), (int) getX() + (int) getWidth(), (int) getY() + (int) getHeight(),
                     index * (int)getWidth(), attitude * (int) getHeight(),(index + 1) * (int)getWidth(), (attitude + 1) * (int)getHeight(), 
                     null);
+        // System.out.println("curent time : "+currTime+"imdex : "+index);
     }
 }
